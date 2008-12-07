@@ -2,7 +2,7 @@ Summary:	RSS reader
 Summary(pl.UTF-8):	Czytnik RSS
 Name:		rsstail
 Version:	1.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Text
 Source0:	http://www.vanheusden.com/rsstail/%{name}-%{version}.tgz
@@ -29,6 +29,7 @@ pojawia się nowa pozycja, wyświetla tylko tę nową pozycję.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
@@ -38,5 +39,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc readme.txt
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/*
+%attr(755,root,root) %{_bindir}/rsstail
+%{_mandir}/man1/rsstail.1*
