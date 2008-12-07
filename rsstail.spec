@@ -1,4 +1,5 @@
 Summary:	RSS reader
+Summary(hu.UTF-8):	RSS olvasó
 Summary(pl.UTF-8):	Czytnik RSS
 Name:		rsstail
 Version:	1.4
@@ -15,6 +16,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 RSSTail is more or less an rss reader: it monitors an rss-feed and if
 it detects a new entry it'll emit only that new entry.
+
+%description -l hu.UTF-8
+RSSTail több vagy kevesebb, mint egy rss olvasó: ellenőriz egy
+rss-forrást és ha új bejegyzést talál, csak az új bejegyzést jeleníti
+meg.
 
 %description -l pl.UTF-8
 RSSTail jest czytnikiem RSS. Monitoruje zadany kanał RSS i jeśli
