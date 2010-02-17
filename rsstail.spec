@@ -2,14 +2,15 @@ Summary:	RSS reader
 Summary(hu.UTF-8):	RSS olvasó
 Summary(pl.UTF-8):	Czytnik RSS
 Name:		rsstail
-Version:	1.5
+Version:	1.6
 Release:	1
 License:	GPL
 Group:		Applications/Text
 Source0:	http://www.vanheusden.com/rsstail/%{name}-%{version}.tgz
-# Source0-md5:	1558fc8b0c9a8cb79e421f783f1ffc40
+# Source0-md5:	b408fad1b8ae894e0f95ba660a5c4b8b
 URL:		http://www.vanheusden.com/rsstail/
 BuildRequires:	libmrss-devel
+BuildRequires:	pkg-config
 Requires:	libmrss
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -30,7 +31,10 @@ pojawia się nowa pozycja, wyświetla tylko tę nową pozycję.
 %setup -q
 
 %build
-%{__make}
+%{__make} \
+	CFLAGS='%{rpmcflags} -DVERSION=\"%{version}\"' \
+	CC="%{__cc}" \
+	LDFLAGS="%{rpmldflags} $(pkg-config --libs mrss)"
 
 %install
 rm -rf $RPM_BUILD_ROOT
