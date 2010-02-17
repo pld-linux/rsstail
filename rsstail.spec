@@ -11,7 +11,6 @@ Source0:	http://www.vanheusden.com/rsstail/%{name}-%{version}.tgz
 URL:		http://www.vanheusden.com/rsstail/
 BuildRequires:	libmrss-devel
 BuildRequires:	pkg-config
-Requires:	libmrss
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
