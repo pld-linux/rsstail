@@ -10,7 +10,7 @@ Source0:	http://www.vanheusden.com/rsstail/%{name}-%{version}.tgz
 # Source0-md5:	b408fad1b8ae894e0f95ba660a5c4b8b
 URL:		http://www.vanheusden.com/rsstail/
 BuildRequires:	libmrss-devel
-BuildRequires:	pkg-config
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -31,9 +31,9 @@ pojawia się nowa pozycja, wyświetla tylko tę nową pozycję.
 
 %build
 %{__make} \
-	CFLAGS='%{rpmcflags} -DVERSION=\"%{version}\"' \
 	CC="%{__cc}" \
-	LDFLAGS="%{rpmldflags} $(pkg-config --libs mrss)"
+	CFLAGS='%{rpmcppflags} %{rpmcflags} -DVERSION=\"%{version}\"' \
+	LDFLAGS="%{rpmcflags} %{rpmldflags} $(pkg-config --libs mrss)"
 
 %install
 rm -rf $RPM_BUILD_ROOT
