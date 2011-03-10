@@ -2,12 +2,12 @@ Summary:	RSS reader
 Summary(hu.UTF-8):	RSS olvasó
 Summary(pl.UTF-8):	Czytnik RSS
 Name:		rsstail
-Version:	1.6
+Version:	1.7
 Release:	1
 License:	GPL
 Group:		Applications/Text
 Source0:	http://www.vanheusden.com/rsstail/%{name}-%{version}.tgz
-# Source0-md5:	b408fad1b8ae894e0f95ba660a5c4b8b
+# Source0-md5:	83d2d81144eacc427a3d8beb4b8d1d52
 URL:		http://www.vanheusden.com/rsstail/
 BuildRequires:	libmrss-devel
 BuildRequires:	pkgconfig
